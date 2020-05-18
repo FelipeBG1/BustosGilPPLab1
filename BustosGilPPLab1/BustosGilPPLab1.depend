@@ -6,9 +6,10 @@
 
 1589373446 c:\users\felib\desktop\clases de programacion1 y laboratorio1\bustosgilpplab1\validaciones.h
 
-1589834518 source:c:\users\felib\desktop\clases de programacion1 y laboratorio1\bustosgilpplab1\main.c
+1589843827 source:c:\users\felib\desktop\clases de programacion1 y laboratorio1\bustosgilpplab1\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Validaciones.h"
 	<string.h>
+	<ctype.h>
 
