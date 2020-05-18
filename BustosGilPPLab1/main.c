@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "Validaciones.h"
 #include <string.h>
+#include <ctype.h>
 #define TAMSERV 4
 #define TAMTIP 4
 #define TAMCOL 5
@@ -217,7 +218,7 @@ int altaBicicleta(eBicicleta bicicletas[], int tamBic,eTipo tipos[],int tamTip,e
     else
     {
 
-           if((utn_getEntero(&auxInt,2,"\nIngrese el id: ","\nError reingrese el id: ",1,1000))==0)
+           if((utn_getEntero(&auxInt,2,"\nIngrese un  id a partir de 1: ","\nError reingrese el id: ",1,10000))==0)
            {
                auxBicicleta.id=auxInt;
            }
@@ -274,6 +275,8 @@ int altaBicicleta(eBicicleta bicicletas[], int tamBic,eTipo tipos[],int tamTip,e
                 printf("\nTe quedaste sin intentos\n\n");
            }
 
+
+
            if((utn_getFlotante(&auxFloat,2,"\nIngrese el rodado: ","\nError reingrese el rodado: ",20,29))==0)
                 {
                     auxBicicleta.rodado=auxFloat;
@@ -310,6 +313,8 @@ char mostrarMenu()
     fflush(stdin);
     scanf("%c",&opcion);
 
+    opcion=toupper(opcion);
+
     return opcion;
 }
 
@@ -343,20 +348,28 @@ void modificarBicicleta(eBicicleta bicicletas[],int tamBic,eTipo tipos[],int tam
     mostrarBicicletas(bicicletas,tamBic,tipos,tamTip,colores,tamCol);
 
 
-     if((utn_getEntero(&auxInt,2,"\nIngrese el id: ","\nError reingrese el id: ",1,4))==0)
-       {
-           id=auxInt;
-       }
-       else
-       {
-            printf("\nTe quedaste sin intentos\n\n");
-       }
+      if((utn_getEntero(&auxInt,2,"\nIngrese el id: ","\nError reingrese el id: ",1,1000))==0)
+    {
+    	id=auxInt;
+    }
+    else
+    {
+    	printf("\nTe quedaste sin intentos\n\n");
+    	id = -1;
+    }
 
     indice = buscarBicicleta(id,bicicletas,tamBic);
 
     if(indice== -1)
     {
-        printf("No hay registro de algun cliente con el id: %d\n", id);
+        if(id==-1)
+    	{
+    		printf("\nSe cancelo la operacion\n\n");
+    	}
+    	else
+    	{
+    		printf("No hay registro de alguna bici con el id: %d\n", id);
+    	}
     }
     else
     {
@@ -517,7 +530,9 @@ void bajaBicicleta(eBicicleta bicicletas[],int tamBic,eTipo tipos[],int tamTip,e
     int auxInt;
 
     system("cls");
-    printf("****Baja cliente****\n\n");
+    printf("****Baja Bicicleta****\n\n");
+
+    mostrarBicicletas(bicicletas,tamBic,tipos,tamTip,colores,tamCol);
 
     if((utn_getEntero(&auxInt,2,"\nIngrese el id: ","\nError reingrese el id: ",1,4))==0)
     {
@@ -526,13 +541,22 @@ void bajaBicicleta(eBicicleta bicicletas[],int tamBic,eTipo tipos[],int tamTip,e
     else
     {
         printf("\nTe quedaste sin intentos\n\n");
+        id = -1;
     }
 
     indice = buscarBicicleta(id,bicicletas,tamBic);
 
     if(indice== -1)
     {
-        printf("No hay registro de alguna bicicleta con el id: %d\n", id);
+        if(id==-1)
+    	{
+    		printf("\nSe cancelo la operacion\n\n");
+    	}
+    	else
+    	{
+    		printf("No hay registro de alguna bicicleta con el id: %d\n", id);
+    	}
+
     }
     else
     {
@@ -601,11 +625,11 @@ void mostrarServicios(eServicio servicios[],int tamServ)
 {
 
     printf("\n****Listado de servicios****\n");
-    printf("id     Descripcion\n");
+    printf("id     Descripcion   Precio\n");
 
     for(int i=0;i<tamServ;i++)
     {
-        printf("%d      %10s   %.2f\n",servicios[i].id,servicios[i].descripcion,servicios[i].precio);
+        printf("%d      %10s   %$ d\n",servicios[i].id, servicios[i].descripcion, servicios[i].precio);
     }
 
 }
