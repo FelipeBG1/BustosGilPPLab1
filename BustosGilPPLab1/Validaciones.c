@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Validaciones.h"
+#include <string.h>
 
 
 int utn_getEntero(int* pEntero,int reintentos,char* msg,char*msgError,int min,int max)
@@ -182,21 +183,4 @@ int isLetras(char*pAux){
     return todoOk;
 }
 
-int validateFlag(int* flag, char* msgError)
-{
-    int todoOk=-1;
-
-    if(*flag==1)
-    {
-        todoOk=0;
-    }
-    else
-    {
-        printf("%s", msgError);
-        system("pause");
-
-    }
-
-    return todoOk;
-}
 

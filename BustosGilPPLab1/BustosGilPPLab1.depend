@@ -1,15 +1,39 @@
 # depslib dependency file v1.0
-1589373428 source:c:\users\felib\desktop\clases de programacion1 y laboratorio1\bustosgilpplab1\validaciones.c
+1589931243 source:c:\users\felib\desktop\clases de programacion1 y laboratorio1\bustosgilpplab1\validaciones.c
 	<stdio.h>
 	<stdlib.h>
 	"Validaciones.h"
+	<string.h>
 
-1589373446 c:\users\felib\desktop\clases de programacion1 y laboratorio1\bustosgilpplab1\validaciones.h
+1589926856 c:\users\felib\desktop\clases de programacion1 y laboratorio1\bustosgilpplab1\validaciones.h
 
-1589843827 source:c:\users\felib\desktop\clases de programacion1 y laboratorio1\bustosgilpplab1\main.c
+1589927683 source:c:\users\felib\desktop\clases de programacion1 y laboratorio1\bustosgilpplab1\main.c
 	<stdio.h>
 	<stdlib.h>
 	"Validaciones.h"
 	<string.h>
 	<ctype.h>
+	"Bicicletas.h"
+	"Trabajos.h"
+
+1589931045 c:\users\felib\desktop\clases de programacion1 y laboratorio1\bustosgilpplab1\bicicletas.h
+
+1589931027 c:\users\felib\desktop\clases de programacion1 y laboratorio1\bustosgilpplab1\trabajos.h
+
+1589927615 source:c:\users\felib\desktop\clases de programacion1 y laboratorio1\bustosgilpplab1\trabajos.c
+	<stdio.h>
+	<stdlib.h>
+	"Validaciones.h"
+	<string.h>
+	<ctype.h>
+	"Bicicletas.h"
+	"Trabajos.h"
+
+1589927683 source:c:\users\felib\desktop\clases de programacion1 y laboratorio1\bustosgilpplab1\bicicletas.c
+	<stdio.h>
+	<stdlib.h>
+	"Validaciones.h"
+	<string.h>
+	<ctype.h>
+	"Bicicletas.h"
 
